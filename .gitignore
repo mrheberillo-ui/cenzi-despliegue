@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+.env
+# El modelo y el dataset se regeneran en el build de Docker
+backend/models/
+backend/data/consultas_cenzi.csv
+resultados-ci/

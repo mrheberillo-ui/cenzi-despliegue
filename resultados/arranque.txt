@@ -1,0 +1,1 @@
+compose up -> sistema listo: 6.37 s

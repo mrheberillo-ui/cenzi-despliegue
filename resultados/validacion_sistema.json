@@ -1,0 +1,493 @@
+{
+  "fecha_utc": "2026-10-31T05:01:59Z",
+  "total": 49,
+  "pasan": 47,
+  "modelo": {
+    "n": 282,
+    "accuracy": 0.8226950354609929,
+    "cobertura": 0.5425531914893617,
+    "acierto_respondidas": 0.954248366013072,
+    "error_total": 0.024822695035460994,
+    "quejas_aclaraciones": 54,
+    "quejas_aclaraciones_escaladas": 0.8703703703703703,
+    "por_motivo": {
+      "confianza_baja": 96,
+      "confianza_suficiente": 153,
+      "regla_queja_aclaracion": 20,
+      "intencion_requiere_persona": 13
+    },
+    "errores_respondidos": [
+      {
+        "texto": "una pregunta, hay un error en mi estado de cuenta por favor",
+        "real": "aclaracion",
+        "predicha": "estado_cuenta",
+        "confianza": 0.8112
+      },
+      {
+        "texto": "nunca contestan el teléfono",
+        "real": "queja",
+        "predicha": "actualizar_datos",
+        "confianza": 0.5203
+      },
+      {
+        "texto": "hay un error en mi estado de cuenta",
+        "real": "aclaracion",
+        "predicha": "estado_cuenta",
+        "confianza": 0.9168
+      },
+      {
+        "texto": "Hay un error en mi estado de cuenta porfa",
+        "real": "aclaracion",
+        "predicha": "estado_cuenta",
+        "confianza": 0.8843
+      },
+      {
+        "texto": "Oye hay un reror en mi estado de cuenta gracias",
+        "real": "aclaracion",
+        "predicha": "estado_cuenta",
+        "confianza": 0.8749
+      },
+      {
+        "texto": "hay un error en mi estado de cuenta porfa",
+        "real": "aclaracion",
+        "predicha": "estado_cuenta",
+        "confianza": 0.8843
+      },
+      {
+        "texto": "buen dia, hay un error en mi estado de cuenta me urge",
+        "real": "aclaracion",
+        "predicha": "estado_cuenta",
+        "confianza": 0.7923
+      }
+    ]
+  },
+  "carga": [
+    {
+      "concurrencia": 1,
+      "solicitudes": 200,
+      "errores": 0,
+      "duracion_s": 1.62,
+      "rps": 123.2,
+      "p50_ms": 6.9,
+      "p95_ms": 10.8,
+      "p99_ms": 42.3,
+      "max_ms": 50.3
+    },
+    {
+      "concurrencia": 10,
+      "solicitudes": 500,
+      "errores": 0,
+      "duracion_s": 2.26,
+      "rps": 221.6,
+      "p50_ms": 41.7,
+      "p95_ms": 75.3,
+      "p99_ms": 104.0,
+      "max_ms": 127.6
+    },
+    {
+      "concurrencia": 50,
+      "solicitudes": 1000,
+      "errores": 0,
+      "duracion_s": 4.68,
+      "rps": 213.5,
+      "p50_ms": 229.5,
+      "p95_ms": 347.0,
+      "p99_ms": 370.5,
+      "max_ms": 399.3
+    }
+  ],
+  "pruebas": [
+    {
+      "bloque": "integracion",
+      "id": "I01",
+      "descripcion": "Frontend responde y alcanza al backend",
+      "esperado": "200 · backend=listo",
+      "obtenido": "200 · backend=listo",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "integracion",
+      "id": "I02",
+      "descripcion": "Interfaz web servida",
+      "esperado": "200 · contiene formulario",
+      "obtenido": "200 · formulario=True",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "integracion",
+      "id": "I03",
+      "descripcion": "GET /health vía proxy",
+      "esperado": "200 · modelo_cargado=true",
+      "obtenido": "200 · modelo_cargado=True",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "integracion",
+      "id": "I04",
+      "descripcion": "GET /ready vía proxy",
+      "esperado": "200 · listo",
+      "obtenido": "200 · {'estado': 'listo'}",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "integracion",
+      "id": "I05",
+      "descripcion": "GET /v1/info",
+      "esperado": "13 intenciones y umbral",
+      "obtenido": "200 · 13 intenciones · umbral 0.49",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "integracion",
+      "id": "I06",
+      "descripcion": "GET /v1/intenciones",
+      "esperado": "queja y aclaración = escalar",
+      "obtenido": "200 · escalar=['aclaracion', 'queja']",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "integracion",
+      "id": "I07",
+      "descripcion": "POST /v1/clasificar: contrato completo",
+      "esperado": "200 · 10 campos · pago_no_reflejado",
+      "obtenido": "200 · pago_no_reflejado · 0.997 · 8.5 ms",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "integracion",
+      "id": "I08",
+      "descripcion": "POST /v1/clasificar/lote",
+      "esperado": "200 · total=3",
+      "obtenido": "200 · total=3 · acciones=['responder', 'responder', 'escalar']",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "integracion",
+      "id": "I09",
+      "descripcion": "Especificación OpenAPI disponible",
+      "esperado": "200 · rutas /v1/*",
+      "obtenido": "200 · 7 rutas",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "integracion",
+      "id": "I10",
+      "descripcion": "GET /v1/metricas cuenta consultas",
+      "esperado": "200 · consultas > 0",
+      "obtenido": "200 · consultas=6",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "modelo",
+      "id": "M01",
+      "descripcion": "Accuracy en 282 consultas de prueba (vía contenedor)",
+      "esperado": "≥ 0.75",
+      "obtenido": "0.823",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "modelo",
+      "id": "M02",
+      "descripcion": "Acierto en lo que responde",
+      "esperado": "≥ 90 %",
+      "obtenido": "95.4%",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "modelo",
+      "id": "M03",
+      "descripcion": "Cobertura (consultas resueltas sin persona)",
+      "esperado": "≥ 50 %",
+      "obtenido": "54.3%",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "modelo",
+      "id": "M04",
+      "descripcion": "Respuestas equivocadas sobre el total",
+      "esperado": "≤ 5 %",
+      "obtenido": "2.5%",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "modelo",
+      "id": "M05",
+      "descripcion": "Quejas y aclaraciones que llegan a una persona",
+      "esperado": "≥ 95 %",
+      "obtenido": "87.0%",
+      "resultado": "FALLA"
+    },
+    {
+      "bloque": "extremos",
+      "id": "E01",
+      "descripcion": "Texto vacío",
+      "esperado": "422",
+      "obtenido": "422 · el texto no puede estar vacío ni contener sólo espacios",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "extremos",
+      "id": "E02",
+      "descripcion": "Sólo espacios",
+      "esperado": "422",
+      "obtenido": "422 · el texto no puede estar vacío ni contener sólo espacios",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "extremos",
+      "id": "E03",
+      "descripcion": "501 caracteres",
+      "esperado": "422",
+      "obtenido": "422 · el texto excede 500 caracteres",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "extremos",
+      "id": "E04",
+      "descripcion": "Exactamente 500 caracteres",
+      "esperado": "200",
+      "obtenido": "200 · responder · fecha_pago (0.72) · confianza_suficiente",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "extremos",
+      "id": "E05",
+      "descripcion": "Campo texto ausente",
+      "esperado": "422",
+      "obtenido": "422 · campo obligatorio",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "extremos",
+      "id": "E06",
+      "descripcion": "Texto numérico (no cadena)",
+      "esperado": "422",
+      "obtenido": "422 · debe ser texto",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "extremos",
+      "id": "E07",
+      "descripcion": "Campo no permitido",
+      "esperado": "422",
+      "obtenido": "422 · campo no permitido",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "extremos",
+      "id": "E08",
+      "descripcion": "Canal inválido",
+      "esperado": "422",
+      "obtenido": "422 · valor no permitido",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "extremos",
+      "id": "E09",
+      "descripcion": "Galimatías",
+      "esperado": "200 · escalar",
+      "obtenido": "200 · escalar · queja (0.25) · confianza_baja",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "extremos",
+      "id": "E10",
+      "descripcion": "Sólo números",
+      "esperado": "200 · escalar",
+      "obtenido": "200 · escalar · queja (0.13) · texto_sin_contenido",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "extremos",
+      "id": "E11",
+      "descripcion": "Sólo emojis",
+      "esperado": "200 · escalar",
+      "obtenido": "200 · escalar · queja (0.14) · texto_sin_contenido",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "extremos",
+      "id": "E12",
+      "descripcion": "Un carácter",
+      "esperado": "200 · escalar",
+      "obtenido": "200 · escalar · queja (0.24) · texto_sin_contenido",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "extremos",
+      "id": "E13",
+      "descripcion": "Inglés (fuera de idioma)",
+      "esperado": "200 · escalar",
+      "obtenido": "200 · escalar · queja (0.12) · confianza_baja",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "extremos",
+      "id": "E14",
+      "descripcion": "Fuera de dominio",
+      "esperado": "200 · escalar",
+      "obtenido": "200 · escalar · estado_cuenta (0.28) · confianza_baja",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "extremos",
+      "id": "E15",
+      "descripcion": "Mayúsculas sostenidas",
+      "esperado": "200 · responder",
+      "obtenido": "200 · responder · fecha_pago (1.00) · confianza_suficiente",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "extremos",
+      "id": "E16",
+      "descripcion": "Errores de tecleo",
+      "esperado": "200 · responder",
+      "obtenido": "200 · responder · fecha_pago (0.79) · confianza_suficiente",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "extremos",
+      "id": "E17",
+      "descripcion": "Abreviatura extrema",
+      "esperado": "200 · escalar_o_correcta",
+      "obtenido": "200 · escalar · fecha_pago (0.22) · confianza_baja",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "extremos",
+      "id": "E18",
+      "descripcion": "Consulta larga con cortesías",
+      "esperado": "200 · responder",
+      "obtenido": "200 · responder · sucursales_horarios (0.99) · confianza_suficiente",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "extremos",
+      "id": "E19",
+      "descripcion": "Número de tarjeta",
+      "esperado": "200 · escalar",
+      "obtenido": "200 · escalar · pago_no_reflejado (0.37) · datos_sensibles",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "extremos",
+      "id": "E20",
+      "descripcion": "CLABE interbancaria",
+      "esperado": "200 · escalar",
+      "obtenido": "200 · escalar · medios_pago (0.86) · datos_sensibles",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "extremos",
+      "id": "E21",
+      "descripcion": "CURP",
+      "esperado": "200 · escalar",
+      "obtenido": "200 · escalar · fecha_pago (0.28) · datos_sensibles",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "extremos",
+      "id": "E22",
+      "descripcion": "Etiqueta <script>",
+      "esperado": "200",
+      "obtenido": "200 · responder · fecha_pago (0.96) · confianza_suficiente",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "extremos",
+      "id": "E23",
+      "descripcion": "Inyección SQL",
+      "esperado": "200",
+      "obtenido": "200 · escalar · queja (0.13) · confianza_baja",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "extremos",
+      "id": "E24",
+      "descripcion": "Plantillas / JNDI",
+      "esperado": "200",
+      "obtenido": "200 · escalar · consultar_saldo (0.19) · confianza_baja",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "extremos",
+      "id": "E25",
+      "descripcion": "Consulta mixta (saldo + cobro indebido)",
+      "esperado": "200 · escalar",
+      "obtenido": "200 · escalar · aclaracion (0.60) · regla_queja_aclaracion",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "extremos",
+      "id": "E26",
+      "descripcion": "Queja dentro de pregunta de sucursal",
+      "esperado": "200 · escalar",
+      "obtenido": "200 · escalar · sucursales_horarios (0.56) · regla_queja_aclaracion",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "extremos",
+      "id": "E27",
+      "descripcion": "JSON mal formado",
+      "esperado": "422",
+      "obtenido": "422 · JSON mal formado",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "extremos",
+      "id": "E28",
+      "descripcion": "Lote de 51 textos (límite 50)",
+      "esperado": "422",
+      "obtenido": "422 · máximo 50 textos por lote",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "extremos",
+      "id": "E29",
+      "descripcion": "Cuerpo de 70 KB (límite del proxy 64 KB)",
+      "esperado": "413",
+      "obtenido": "413",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "extremos",
+      "id": "E30",
+      "descripcion": "Ruta inexistente",
+      "esperado": "404",
+      "obtenido": "404",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "extremos",
+      "id": "E31",
+      "descripcion": "Método GET en endpoint POST",
+      "esperado": "405",
+      "obtenido": "405",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "carga",
+      "id": "C01",
+      "descripcion": "200 solicitudes con concurrencia 1",
+      "esperado": "0 errores · p95 ≤ 300 ms",
+      "obtenido": "0 errores · p95 10.8 ms · 123.2 sol/s",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "carga",
+      "id": "C10",
+      "descripcion": "500 solicitudes con concurrencia 10",
+      "esperado": "0 errores · p95 ≤ 300 ms",
+      "obtenido": "0 errores · p95 75.3 ms · 221.6 sol/s",
+      "resultado": "PASA"
+    },
+    {
+      "bloque": "carga",
+      "id": "C50",
+      "descripcion": "1000 solicitudes con concurrencia 50",
+      "esperado": "0 errores · p95 ≤ 300 ms",
+      "obtenido": "0 errores · p95 347.0 ms · 213.5 sol/s",
+      "resultado": "FALLA"
+    }
+  ]
+}

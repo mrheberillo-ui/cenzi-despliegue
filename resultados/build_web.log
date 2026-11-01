@@ -1,0 +1,46 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.16kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/cenzi-base:local-py3.13
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 64B done
+#3 DONE 0.0s
+
+#4 [1/5] FROM docker.io/library/cenzi-base:local-py3.13@sha256:906d7fd88c36bf42a2a09c9642c96fdffd358f94d99191354f235ac161186af7
+#4 resolve docker.io/library/cenzi-base:local-py3.13@sha256:906d7fd88c36bf42a2a09c9642c96fdffd358f94d99191354f235ac161186af7 0.0s done
+#4 DONE 0.0s
+
+#5 [2/5] WORKDIR /web
+#5 CACHED
+
+#6 [internal] load build context
+#6 transferring context: 164B done
+#6 DONE 0.0s
+
+#7 [3/5] COPY server.py ./
+#7 DONE 0.4s
+
+#8 [4/5] COPY static/ static/
+#8 DONE 0.0s
+
+#9 [5/5] RUN useradd --system --uid 10001 --no-create-home cenzi 2>/dev/null || echo "cenzi:x:10001:10001::/web:/sbin/nologin" >> /etc/passwd
+#9 DONE 0.1s
+
+#10 exporting to image
+#10 exporting layers 0.1s done
+#10 exporting manifest sha256:6a83171eadfce0cc484e20ceb60b9d11d3177ae3e7d442d01d40e06b72d4d1f3 done
+#10 exporting config sha256:682d0d03fe2c901989a05e07ea4916eda55b91ce8b03c3ab1a9ca2e08e4924fd done
+#10 exporting attestation manifest sha256:082b9b28aa653ad1a44c6f54148168c5f4d13dda2191b88eed79a8e0e1cac23b done
+#10 exporting manifest list sha256:72ec28c6e798e93e58c3cb26d633af7415692f2605ba4995672f2dcd817b0674 done
+#10 naming to docker.io/library/cenzi-web:1.0.0 done
+#10 unpacking to docker.io/library/cenzi-web:1.0.0 0.0s done
+#10 DONE 0.1s
+
+real	0m0.968s
+user	0m0.098s
+sys	0m0.064s

@@ -1,0 +1,50 @@
+bloque,id,descripcion,esperado,obtenido,resultado
+integracion,I01,Frontend responde y alcanza al backend,200 · backend=listo,200 · backend=listo,PASA
+integracion,I02,Interfaz web servida,200 · contiene formulario,200 · formulario=True,PASA
+integracion,I03,GET /health vía proxy,200 · modelo_cargado=true,200 · modelo_cargado=True,PASA
+integracion,I04,GET /ready vía proxy,200 · listo,200 · {'estado': 'listo'},PASA
+integracion,I05,GET /v1/info,13 intenciones y umbral,200 · 13 intenciones · umbral 0.49,PASA
+integracion,I06,GET /v1/intenciones,queja y aclaración = escalar,"200 · escalar=['aclaracion', 'queja']",PASA
+integracion,I07,POST /v1/clasificar: contrato completo,200 · 10 campos · pago_no_reflejado,200 · pago_no_reflejado · 0.997 · 8.5 ms,PASA
+integracion,I08,POST /v1/clasificar/lote,200 · total=3,"200 · total=3 · acciones=['responder', 'responder', 'escalar']",PASA
+integracion,I09,Especificación OpenAPI disponible,200 · rutas /v1/*,200 · 7 rutas,PASA
+integracion,I10,GET /v1/metricas cuenta consultas,200 · consultas > 0,200 · consultas=6,PASA
+modelo,M01,Accuracy en 282 consultas de prueba (vía contenedor),≥ 0.75,0.823,PASA
+modelo,M02,Acierto en lo que responde,≥ 90 %,95.4%,PASA
+modelo,M03,Cobertura (consultas resueltas sin persona),≥ 50 %,54.3%,PASA
+modelo,M04,Respuestas equivocadas sobre el total,≤ 5 %,2.5%,PASA
+modelo,M05,Quejas y aclaraciones que llegan a una persona,≥ 95 %,87.0%,FALLA
+extremos,E01,Texto vacío,422,422 · el texto no puede estar vacío ni contener sólo espacios,PASA
+extremos,E02,Sólo espacios,422,422 · el texto no puede estar vacío ni contener sólo espacios,PASA
+extremos,E03,501 caracteres,422,422 · el texto excede 500 caracteres,PASA
+extremos,E04,Exactamente 500 caracteres,200,200 · responder · fecha_pago (0.72) · confianza_suficiente,PASA
+extremos,E05,Campo texto ausente,422,422 · campo obligatorio,PASA
+extremos,E06,Texto numérico (no cadena),422,422 · debe ser texto,PASA
+extremos,E07,Campo no permitido,422,422 · campo no permitido,PASA
+extremos,E08,Canal inválido,422,422 · valor no permitido,PASA
+extremos,E09,Galimatías,200 · escalar,200 · escalar · queja (0.25) · confianza_baja,PASA
+extremos,E10,Sólo números,200 · escalar,200 · escalar · queja (0.13) · texto_sin_contenido,PASA
+extremos,E11,Sólo emojis,200 · escalar,200 · escalar · queja (0.14) · texto_sin_contenido,PASA
+extremos,E12,Un carácter,200 · escalar,200 · escalar · queja (0.24) · texto_sin_contenido,PASA
+extremos,E13,Inglés (fuera de idioma),200 · escalar,200 · escalar · queja (0.12) · confianza_baja,PASA
+extremos,E14,Fuera de dominio,200 · escalar,200 · escalar · estado_cuenta (0.28) · confianza_baja,PASA
+extremos,E15,Mayúsculas sostenidas,200 · responder,200 · responder · fecha_pago (1.00) · confianza_suficiente,PASA
+extremos,E16,Errores de tecleo,200 · responder,200 · responder · fecha_pago (0.79) · confianza_suficiente,PASA
+extremos,E17,Abreviatura extrema,200 · escalar_o_correcta,200 · escalar · fecha_pago (0.22) · confianza_baja,PASA
+extremos,E18,Consulta larga con cortesías,200 · responder,200 · responder · sucursales_horarios (0.99) · confianza_suficiente,PASA
+extremos,E19,Número de tarjeta,200 · escalar,200 · escalar · pago_no_reflejado (0.37) · datos_sensibles,PASA
+extremos,E20,CLABE interbancaria,200 · escalar,200 · escalar · medios_pago (0.86) · datos_sensibles,PASA
+extremos,E21,CURP,200 · escalar,200 · escalar · fecha_pago (0.28) · datos_sensibles,PASA
+extremos,E22,Etiqueta <script>,200,200 · responder · fecha_pago (0.96) · confianza_suficiente,PASA
+extremos,E23,Inyección SQL,200,200 · escalar · queja (0.13) · confianza_baja,PASA
+extremos,E24,Plantillas / JNDI,200,200 · escalar · consultar_saldo (0.19) · confianza_baja,PASA
+extremos,E25,Consulta mixta (saldo + cobro indebido),200 · escalar,200 · escalar · aclaracion (0.60) · regla_queja_aclaracion,PASA
+extremos,E26,Queja dentro de pregunta de sucursal,200 · escalar,200 · escalar · sucursales_horarios (0.56) · regla_queja_aclaracion,PASA
+extremos,E27,JSON mal formado,422,422 · JSON mal formado,PASA
+extremos,E28,Lote de 51 textos (límite 50),422,422 · máximo 50 textos por lote,PASA
+extremos,E29,Cuerpo de 70 KB (límite del proxy 64 KB),413,413,PASA
+extremos,E30,Ruta inexistente,404,404,PASA
+extremos,E31,Método GET en endpoint POST,405,405,PASA
+carga,C01,200 solicitudes con concurrencia 1,0 errores · p95 ≤ 300 ms,0 errores · p95 10.8 ms · 123.2 sol/s,PASA
+carga,C10,500 solicitudes con concurrencia 10,0 errores · p95 ≤ 300 ms,0 errores · p95 75.3 ms · 221.6 sol/s,PASA
+carga,C50,1000 solicitudes con concurrencia 50,0 errores · p95 ≤ 300 ms,0 errores · p95 347.0 ms · 213.5 sol/s,FALLA

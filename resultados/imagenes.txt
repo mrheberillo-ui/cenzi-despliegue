@@ -1,0 +1,6 @@
+Capas propias de cada imagen (docker history), medidas en la corrida de validación:
+  cenzi-api:1.0.0  ≈ 296 MB sobre la imagen base (dependencias 295 MB, modelo 0.9 MB, datos 0.1 MB, código 0.1 MB)
+  cenzi-web:1.0.0  ≈ 0.08 MB sobre la imagen base
+La validación se construyó con una imagen base local equivalente (Python 3.13.18) porque el entorno
+no tenía acceso a Docker Hub; el tamaño total con python:3.13-slim es la imagen base más estas capas.
+Para obtener el tamaño en tu equipo: docker images | grep cenzi

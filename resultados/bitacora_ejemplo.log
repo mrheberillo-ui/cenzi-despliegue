@@ -1,0 +1,4 @@
+{"evento": "clasificacion", "id": "872e1573ed1f", "canal": "web", "texto": "cuándo es mi fecha de pago", "intencion": "fecha_pago", "confianza": 0.9975, "accion": "responder", "motivo": "confianza_suficiente"}
+{"evento": "clasificacion", "id": "4913f8ddc101", "canal": "web", "texto": "quiero poner una queja", "intencion": "reestructura", "confianza": 0.3347, "accion": "escalar", "motivo": "regla_queja_aclaracion"}
+{"evento": "clasificacion", "id": "f66a32bb2340", "canal": "web", "texto": "ya pagué y no aparece mi pago", "intencion": "pago_no_reflejado", "confianza": 0.9969, "accion": "responder", "motivo": "confianza_suficiente"}
+{"evento": "clasificacion", "id": "c5e07747544d-0", "canal": "web", "texto": "fecha de pago", "intencion": "fecha_pago", "confianza": 0.9893, "accion": "responder", "motivo": "confianza_suficiente"}

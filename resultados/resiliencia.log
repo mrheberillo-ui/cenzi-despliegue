@@ -1,0 +1,19 @@
+== R01 Backend detenido: el frontend sigue en pie y responde 502 controlado ==
+[PASA] R01 -> healthz=no_disponible · clasificar=502 · interfaz=200 · {"error": "backend_no_disponible", "mensaje": "El servicio de clasificación no responde. Intenta de nuevo en unos minut
+== R02 Backend reiniciado: recuperación sin reiniciar el frontend ==
+[PASA] R02 -> listo de nuevo en 3.06s · clasificar=200
+== R03 Caída abrupta del proceso (kill -9): la política restart lo levanta ==
+[PASA] R03 -> reinicio automático #1 · listo en 2.57s
+== R04 Modelo ausente: el contenedor arranca, /ready=503 y healthcheck unhealthy ==
+[PASA] R04 -> health=modelo_cargado:false · ready=503 · clasificar=503 · healthcheck=unhealthy
+== R05 Configuración por variables de entorno (umbral) ==
+[PASA] R05 -> umbral=0.95 · consulta con confianza 0.7883 ahora se escala
+== R06 Portabilidad: puerto inyectado por la plataforma (PORT=9000, como Cloud Run) ==
+[PASA] R06 -> escucha en 9000 · listo en 1.75s
+== R07 Seguridad: usuario sin privilegios y sistema de archivos de la app protegido ==
+[PASA] R07 -> usuario=10001 · escritura en /app/app denegada
+== R08 Arranque en frío del contenedor de la API (docker run → /ready) ==
+[PASA] R08 -> listo en 2.01 s
+== R09 Sistema completo sigue sano al terminar ==
+[PASA] R09 -> {"estado": "ok", "backend": "listo", "backend_url": "http://api:8000"}
+Todas las pruebas de resiliencia pasan.

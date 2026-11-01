@@ -1,0 +1,50 @@
+# Cenzi · orquestación local (backend + frontend)
+#   docker compose up --build -d
+#   Interfaz: http://localhost:8080     API: http://localhost:8000/docs
+name: cenzi
+
+services:
+  api:
+    build:
+      context: ./backend
+      args:
+        BASE_IMAGE: ${BASE_IMAGE:-python:3.13-slim}
+        PIP_EXTRA_ARGS: ${PIP_EXTRA_ARGS:-}
+    image: cenzi-api:1.0.0
+    container_name: cenzi-api
+    env_file: .env
+    ports:
+      - "${API_PORT:-8000}:8000"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/ready', timeout=2)"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 10s
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 512M
+
+  web:
+    build:
+      context: ./frontend
+      args:
+        BASE_IMAGE: ${BASE_IMAGE:-python:3.13-slim}
+    image: cenzi-web:1.0.0
+    container_name: cenzi-web
+    environment:
+      BACKEND_URL: http://api:8000
+    ports:
+      - "${WEB_PORT:-8080}:8080"
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 128M

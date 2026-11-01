@@ -1,0 +1,50 @@
+# Integración continua: en cada push o pull request construye las dos imágenes
+# (el build del backend entrena el modelo y ejecuta las pruebas unitarias),
+# levanta el sistema con Docker Compose y corre la prueba de humo y la validación.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  construir-y-probar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Preparar variables de entorno
+        run: cp .env.example .env
+
+      - name: Construir imágenes (incluye entrenamiento y pytest)
+        run: docker compose build
+
+      - name: Levantar el sistema
+        run: |
+          docker compose up -d
+          for i in $(seq 1 60); do curl -sf http://localhost:8080/healthz | grep -q listo && break; sleep 2; done
+          docker compose ps
+
+      - name: Prueba de humo
+        run: sh pruebas/smoke_test.sh
+
+      - name: Validación de caja negra
+        run: |
+          docker cp cenzi-api:/app/models/conjunto_prueba.csv conjunto_prueba.csv
+          python3 pruebas/validacion_sistema.py --prueba conjunto_prueba.csv --salida resultados-ci --sin-carga || true
+
+      - name: Guardar resultados
+        uses: actions/upload-artifact@v4
+        with:
+          name: resultados-validacion
+          path: resultados-ci/
+
+      - name: Bitácoras en caso de fallo
+        if: failure()
+        run: docker compose logs
+
+      - name: Apagar
+        if: always()
+        run: docker compose down

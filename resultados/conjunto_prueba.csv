@@ -1,0 +1,283 @@
+id,texto,intencion,accion,frase_base
+C00003,necesito ayuda para pagar,reestructura,responder,reestructura-08
+C00008,oye me quedé sin trabajo y no puedo pagar gracias,reestructura,responder,reestructura-02
+C00015,"una preguntaa, requisitos para pyme",requisitos_credito,responder,requisitos_credito-16
+C00029,hola cuanto es mi deuda total xfa,consultar_saldo,responder,consultar_saldo-09
+C00035,cda cuándo tengo que pagar por favor,fecha_pago,responder,fecha_pago-05
+C00036,"buen día, estado de cuenta del mes pasado me urge",estado_cuenta,responder,estado_cuenta-15
+C00043,buenas tardes carta de no adeudo?,estado_cuenta,responder,estado_cuenta-12
+C00057,estoy muy molesto cno el servicio,queja,escalar,queja-02
+C00072,Como actualizo mi correo,actualizar_datos,responder,actualizar_datos-01
+C00073,oye mi correo está mal escrito gracias,actualizar_datos,responder,actualizar_datos-06
+C00075,"buen día, quiero poner otro teléfono de contacto?",actualizar_datos,responder,actualizar_datos-07
+C00076,CUÁNTO PAGO DE INTERESES AL FINAL PORFA,tasa_cat,responder,tasa_cat-13
+C00083,"Una pergunta, tengo respuesta de mi credito",estatus_solicitud,responder,estatus_solicitud-10
+C00084,estoy muy molesto con el servicio,queja,escalar,queja-02
+C00086,cuál es la fecha límite de mi mensualidad gracias,fecha_pago,responder,fecha_pago-03
+C00095,hace doos dias pague y nada,pago_no_reflejado,responder,pago_no_reflejado-13
+C00099,requisitos para pyme,requisitos_credito,responder,requisitos_credito-16
+C00106,disculpe como pago desde la app,medios_pago,responder,medios_pago-04
+C00112,"una pregunta, hay un error en mi estado de cuenta por favor",aclaracion,escalar,aclaracion-15
+C00113,me cobraron una penalización injusta,aclaracion,escalar,aclaracion-16
+C00120,"una pregunta, quiero cambiar mi número de teléfono me urge",actualizar_datos,responder,actualizar_datos-00
+C00123,puedo sacar un crédito si soy independiente de favor,requisitos_credito,responder,requisitos_credito-03
+C00126,disculpe cuál es la fecha límite de mi mensualidad de favor,fecha_pago,responder,fecha_pago-03
+C00143,disculpe están abiertos hoy,sucursales_horarios,responder,sucursales_horarios-10
+C00145,disculpe como obteng un comprobante de pago me urge,estado_cuenta,responder,estado_cuenta-06
+C00151,"buen día, dirección de la sucursal en querétaro?",sucursales_horarios,responder,sucursales_horarios-05
+C00155,oye hice una transferencia y no se refleja,pago_no_reflejado,responder,pago_no_reflejado-01
+C00166,disculpe como actualizo mmi correo,actualizar_datos,responder,actualizar_datos-01
+C00171,cuantto es mi deuda total gracias,consultar_saldo,responder,consultar_saldo-09
+C00177,hola cuándo me depositan el dinnero del préstamo por favor,estatus_solicitud,responder,estatus_solicitud-14
+C00178,buenas tardes hice una transferencia y no se refleja me urge,pago_no_reflejado,responder,pago_no_reflejado-01
+C00182,"una pregunta, puedo sacar un crédito si soy independiente gracias",requisitos_credito,responder,requisitos_credito-03
+C00183,"una pregunta, estoy muy molesto con el servicio",queja,escalar,queja-02
+C00185,"Una pregunta, nunca contstan el tel?",queja,escalar,queja-17
+C00188,oye estoy muy molesto con el servicio me urge,queja,escalar,queja-02
+C00190,buenas tardes horario de sucursal entre semana porfa,sucursales_horarios,responder,sucursales_horarios-15
+C00196,oye cuál es el cat promeedio?,tasa_cat,responder,tasa_cat-11
+C00199,cuando me depositan el dinnero del prestamo de favor,estatus_solicitud,responder,estatus_solicitud-14
+C00200,"buen día, estoy enfermo y no puedo paggar gracias",reestructura,responder,reestructura-15
+C00201,hola nunca contestan el tel,queja,escalar,queja-17
+C00205,"Una pregunta, cuál es la sucursal más cercana",sucursales_horarios,responder,sucursales_horarios-03
+C00210,NECESITO AYUDA PARA PAGAR GRACIAS,reestructura,responder,reestructura-08
+C00212,oye sigue pendiente mi trámite?,estatus_solicitud,responder,estatus_solicitud-12
+C00221,oye cuánto es mi deuda total,consultar_saldo,responder,consultar_saldo-09
+C00222,quiero cambiar mi número de teléfono,actualizar_datos,responder,actualizar_datos-00
+C00233,hola me estan cobrando algo que no es,aclaracion,escalar,aclaracion-09
+C00239,cómo actualizo mi correo,actualizar_datos,responder,actualizar_datos-01
+C00240,"Una preunta, carta de no adeudo",estado_cuenta,responder,estado_cuenta-12
+C00242,"buen día, dirección de la sucursal en qrétaro de favor",sucursales_horarios,responder,sucursales_horarios-05
+C00243,mi correo está mal escrito,actualizar_datos,responder,actualizar_datos-06
+C00246,BUENAS TARDES DIRECCIÓN DE LA SUCURSAL EN QUERÉTARO GRACIAS,sucursales_horarios,responder,sucursales_horarios-05
+C00247,Diisculpe cual es el cat promedio porfa,tasa_cat,responder,tasa_cat-11
+C00252,nunca contestan el teléfono,queja,escalar,queja-17
+C00258,Buenas tardes cuál es el cat promedio de favor,tasa_cat,responder,tasa_cat-11
+C00259,OYE QUIERO PONER OTRO TELÉFONO DE CONTACTO DE FAVOR,actualizar_datos,responder,actualizar_datos-07
+C00263,"una pregunta, requisitos para pyme de favor",requisitos_credito,responder,requisitos_credito-16
+C00270,"una pregunta, nunca contestan l teléfono",queja,escalar,queja-17
+C00271,"buen día, el trato fue rosero",queja,escalar,queja-12
+C00272,dirección de la sucursal en querétaro,sucursales_horarios,responder,sucursales_horarios-05
+C00276,hola cmo actualizo mi correo,actualizar_datos,responder,actualizar_datos-01
+C00280,"una pregunta, hace dos días pagué y nada",pago_no_reflejado,responder,pago_no_reflejado-13
+C00284,están abiertos hoy,sucursales_horarios,responder,sucursales_horarios-10
+C00288,disculpe qué necesito para pedir un crédito me urge,requisitos_credito,responder,requisitos_credito-00
+C00299,Cada cuándo tengo que pagar porfa,fecha_pago,responder,fecha_pago-05
+C00302,quiero poner otro teléfono de contacto,actualizar_datos,responder,actualizar_datos-07
+C00305,cómo pago desde la app?,medios_pago,responder,medios_pago-04
+C00306,oye como pago desde la app de favor,medios_pago,responder,medios_pago-04
+C00313,hola puedo pagar con mi tarjeta de débito desde el celular xfa,medios_pago,responder,medios_pago-17
+C00318,cómo hago el pago en línea de favor,medios_pago,responder,medios_pago-16
+C00322,"buen día, me llaman a cada rato para cobrarme por favor",queja,escalar,queja-03
+C00343,sigue pendiente mi trámite,estatus_solicitud,responder,estatus_solicitud-12
+C00345,"buen día, cuánto es mi deuda total porfa",consultar_saldo,responder,consultar_saldo-09
+C00348,a qué hora abren,sucursales_horarios,responder,sucursales_horarios-01
+C00349,"buen día, la tasa es fija o variable me urge",tasa_cat,responder,tasa_cat-04
+C00351,quiero poner una queja,queja,escalar,queja-00
+C00352,"bue ndía, hace dos días pagué y nada",pago_no_reflejado,responder,pago_no_reflejado-13
+C00353,tengo respuesta de mi crédito gracias,estatus_solicitud,responder,estatus_solicitud-10
+C00355,"buen dia, me llaman a cada rato para cobrarme",queja,escalar,queja-03
+C00367,"buen dia, estado de cuenta del mes pasado me urge",estado_cuenta,responder,estado_cuenta-15
+C00372,de cnto es el interés anual,tasa_cat,responder,tasa_cat-09
+C00373,cuánto pago de intereses a lfinal por favor,tasa_cat,responder,tasa_cat-13
+C00377,buenas tardes como obtengo un comprobante de pago por favor,estado_cuenta,responder,estado_cuenta-06
+C00379,hice una transferencia y no se refleja de favor,pago_no_reflejado,responder,pago_no_reflejado-01
+C00397,oye como hago el pago en linea porfa,medios_pago,responder,medios_pago-16
+C00403,"buen dia, tengo respuesta de mi credito por favor",estatus_solicitud,responder,estatus_solicitud-10
+C00415,DISCULPE REQUISITOS PARA PYME,requisitos_credito,responder,requisitos_credito-16
+C00424,buenas tardes a qué hora abren,sucursales_horarios,responder,sucursales_horarios-01
+C00426,"una pregunta, me quedé sin trabajo y no puedo pagar por favor",reestructura,responder,reestructura-02
+C00427,puedo pagar en oxxo de favor,medios_pago,responder,medios_pago-01
+C00429,HOLA CUAL ES LA SUCURSAL MAS CERCANA,sucursales_horarios,responder,sucursales_horarios-03
+C00430,Buenas tardes dónde están buicados?,sucursales_horarios,responder,sucursales_horarios-08
+C00431,cuándo me depositan el dineero del préstamo?,estatus_solicitud,responder,estatus_solicitud-14
+C00450,tengo respuesta de mi crédito,estatus_solicitud,responder,estatus_solicitud-10
+C00457,"buen día, de cuánto es el interés anual",tasa_cat,responder,tasa_cat-09
+C00464,"una pregunta, cuanto pago de intereses al final por favor",tasa_cat,responder,tasa_cat-13
+C00468,no me llego mi estado de uenta de favor,estado_cuenta,responder,estado_cuenta-01
+C00471,"Una pregunta, dirección de la sucursal en querétaro?",sucursales_horarios,responder,sucursales_horarios-05
+C00477,"Una pregunta, de cuánto es el interés anual",tasa_cat,responder,tasa_cat-09
+C00487,cada cuándo tengo que pagar,fecha_pago,responder,fecha_pago-05
+C00488,OYE PUEDO SACAR UN CREDITO SI SOY INDEPENDIENTE DE FAVOR,requisitos_credito,responder,requisitos_credito-03
+C00489,"buen dia, donde estan ubicados gracias",sucursales_horarios,responder,sucursales_horarios-08
+C00492,Disculpe mi correo está mal escrito,actualizar_datos,responder,actualizar_datos-06
+C00503,disculpe cual es la fecha limite de mi mensualidad me urge,fecha_pago,responder,fecha_pago-03
+C00506,hola cuánto interés cobran?,tasa_cat,responder,tasa_cat-08
+C00514,cuál es la fecha límite de mi mensualidad,fecha_pago,responder,fecha_pago-03
+C00526,"buen dia, me aplicaron un cargo indebido porfa",aclaracion,escalar,aclaracion-10
+C00535,disculpe el trato fue ggrosero,queja,escalar,queja-12
+C00543,me estan cobrando algo q no es me urge,aclaracion,escalar,aclaracion-09
+C00548,cuánto interés cobran,tasa_cat,responder,tasa_cat-08
+C00555,"una pregunta, la tasa es fija o variabe",tasa_cat,responder,tasa_cat-04
+C00562,oye sigue pendiente mi trámite porfa,estatus_solicitud,responder,estatus_solicitud-12
+C00565,"buen día, requisitos para pyme?",requisitos_credito,responder,requisitos_credito-16
+C00567,"buen día, dirección de la sucursal en querétaro me urge",sucursales_horarios,responder,sucursales_horarios-05
+C00570,"una preguunta, cómo registro mi nuevo número",actualizar_datos,responder,actualizar_datos-12
+C00583,puedo sacar un crédito si soy independiente,requisitos_credito,responder,requisitos_credito-03
+C00597,"buen día, no me llegó mi estado de cuenta",estado_cuenta,responder,estado_cuenta-01
+C00607,cnto interés cobran me urge,tasa_cat,responder,tasa_cat-08
+C00608,disculpe cómo registro mi nuevo número porfa,actualizar_datos,responder,actualizar_datos-12
+C00610,Buenas tardes estoy muy molesto con el servicio porfa,queja,escalar,queja-02
+C00611,estado de cuenta del mes pasado gracias,estado_cuenta,responder,estado_cuenta-15
+C00615,hay un error en mi estado de cuenta,aclaracion,escalar,aclaracion-15
+C00624,hola puedo pagar con mi tarjeta de debito desde el celular de favor,medios_pago,responder,medios_pago-17
+C00636,"buen día, neccesito ayuda para pagar xfa",reestructura,responder,reestructura-08
+C00640,buenas tardes sigue pendiente mi tramite por favor,estatus_solicitud,responder,estatus_solicitud-12
+C00642,hola puedo pagar en oxxo,medios_pago,responder,medios_pago-01
+C00651,hola q necesito para pedi un cred?,requisitos_credito,responder,requisitos_credito-00
+C00652,Hay un error en mi estado de cuenta porfa,aclaracion,escalar,aclaracion-15
+C00653,disculpe como pago desde la app por favor,medios_pago,responder,medios_pago-04
+C00655,como actualizo mi correo mme urge,actualizar_datos,responder,actualizar_datos-01
+C00659,disculpe cuanto pago de intereses al final de favor,tasa_cat,responder,tasa_cat-13
+C00660,oye donde estan ubicados porfa,sucursales_horarios,responder,sucursales_horarios-08
+C00664,me llaman a cada rato para cobrarme me urge,queja,escalar,queja-03
+C00668,Oye qué necesito para pedir un crédito,requisitos_credito,responder,requisitos_credito-00
+C00672,quiero cambiar mi númer ode teléfono,actualizar_datos,responder,actualizar_datos-00
+C00684,cuánto es mi deuda total,consultar_saldo,responder,consultar_saldo-09
+C00686,cuándo me depositan el dinero del préstamo gracias,estatus_solicitud,responder,estatus_solicitud-14
+C00701,buenas tardes cuál es la sucursal más cercana?,sucursales_horarios,responder,sucursales_horarios-03
+C00707,Quiero cambiar mi número de teléfono,actualizar_datos,responder,actualizar_datos-00
+C00708,disculpe cual es la sucursal mas cercana,sucursales_horarios,responder,sucursales_horarios-03
+C00714,me aplicaron un cargo indebido porfa,aclaracion,escalar,aclaracion-10
+C00715,Quiero poer una queja?,queja,escalar,queja-00
+C00723,HOLA HORARIO DE SUCURSAL ENTRE SEMANA POR FAVOR,sucursales_horarios,responder,sucursales_horarios-15
+C00730,Disculpe puedo pagar en oxxo,medios_pago,responder,medios_pago-01
+C00741,estoy enfermo y no puedo pagar,reestructura,responder,reestructura-15
+C00745,disculpe estoy enfermo y no puedo pagar por favor,reestructura,responder,reestructura-15
+C00746,disculpe estado de cuenta del mes pasado gracias,estado_cuenta,responder,estado_cuenta-15
+C00755,"una pregunta, sigue penndiente mi tramite gracias",estatus_solicitud,responder,estatus_solicitud-12
+C00756,dónde están ubicados,sucursales_horarios,responder,sucursales_horarios-08
+C00762,Buenas tardes la tasa es fija o variable me urge,tasa_cat,responder,tasa_cat-04
+C00765,no me llego mi estado de cuenta me urge,estado_cuenta,responder,estado_cuenta-01
+C00767,"una pregunta, cuanto pago de intereses al final porfa",tasa_cat,responder,tasa_cat-13
+C00771,estan abiertos hoy,sucursales_horarios,responder,sucursales_horarios-10
+C00775,hola cómo obtengo un comprobante de pago,estado_cuenta,responder,estado_cuenta-06
+C00777,"una pregunta, la tasa es fija o variable",tasa_cat,responder,tasa_cat-04
+C00781,quiero cambiar mi número de teléfono de favor,actualizar_datos,responder,actualizar_datos-00
+C00789,hola horario de sucursal entre semana,sucursales_horarios,responder,sucursales_horarios-15
+C00791,Hola como registro mi nuevo numero,actualizar_datos,responder,actualizar_datos-12
+C00792,cual es la fecha limite de mi mensualidad,fecha_pago,responder,fecha_pago-03
+C00796,me cobraron una penalizacion injusta de favvor,aclaracion,escalar,aclaracion-16
+C00797,oye están abiertos hoy,sucursales_horarios,responder,sucursales_horarios-10
+C00824,cómo registro mi nuevo número,actualizar_datos,responder,actualizar_datos-12
+C00827,cada cuando tengo que pagar,fecha_pago,responder,fecha_pago-05
+C00834,no me llegó mi estado de cuenta,estado_cuenta,responder,estado_cuenta-01
+C00841,cómo obtengo un comprobante de pago,estado_cuenta,responder,estado_cuenta-06
+C00845,puedo pagar con mi tarjeta de debito desde el celular porfa,medios_pago,responder,medios_pago-17
+C00848,el trato fue grosero gracias,queja,escalar,queja-12
+C00854,me aplicaron un cargo indebido,aclaracion,escalar,aclaracion-10
+C00866,qué necesito para pedir un crédito,requisitos_credito,responder,requisitos_credito-00
+C00870,"Una pregunta, esto yenfermo y no puedo pagar de favor",reestructura,responder,reestructura-15
+C00872,"una pregunta, necesito ayuda para pagar me urge",reestructura,responder,reestructura-08
+C00882,Buenas tardes nunca contestan el telefono,queja,escalar,queja-17
+C00883,no me llegó mi estado de cuenta de ffavor,estado_cuenta,responder,estado_cuenta-01
+C00885,"buen día, hice una transferencia y no se refleja",pago_no_reflejado,responder,pago_no_reflejado-01
+C00889,hola quiero poner una queja,queja,escalar,queja-00
+C00893,carta de no adeudo,estado_cuenta,responder,estado_cuenta-12
+C00895,"una pregunta, sigue pendiente mi trámite porfa",estatus_solicitud,responder,estatus_solicitud-12
+C00896,hola el trato fue grosero,queja,escalar,queja-12
+C00901,me están cobrando algo que no es,aclaracion,escalar,aclaracion-09
+C00904,oye me qdé sin trabajo y no puedo pagar de favor,reestructura,responder,reestructura-02
+C00905,"buen dia, cuanto interes cobran",tasa_cat,responder,tasa_cat-08
+C00908,Oye el trato ue grosero,queja,escalar,queja-12
+C00919,puedo pagar en oxxo,medios_pago,responder,medios_pago-01
+C00924,oye carta de no adeudo,estado_cuenta,responder,estado_cuenta-12
+C00935,disculpe como obtengo un comprobante de pago po favor,estado_cuenta,responder,estado_cuenta-06
+C00937,"una pregunta, de cuánto es el interés anual porfa",tasa_cat,responder,tasa_cat-09
+C00941,puedo pagar con mi tarjeta de débito desde el celular dde favor,medios_pago,responder,medios_pago-17
+C00946,la tasa es fija o variable,tasa_cat,responder,tasa_cat-04
+C00952,Disculpe donde estan ubicados,sucursales_horarios,responder,sucursales_horarios-08
+C00953,hola no me llegó mi estado de cuenta porfa,estado_cuenta,responder,estado_cuenta-01
+C00958,oye nunca conntestan el telefono por favor,queja,escalar,queja-17
+C00959,oye hace dos días pagué y nada?,pago_no_reflejado,responder,pago_no_reflejado-13
+C00961,Qué necesito para pedir un crédito de favor,requisitos_credito,responder,requisitos_credito-00
+C00962,oye estoy muy molesto con el servicio de favor,queja,escalar,queja-02
+C00972,QUIERO PONER OTROO TELEFONO DE CONTACTO GRACIAS,actualizar_datos,responder,actualizar_datos-07
+C00973,Hola me cobraron una penalizacion njusta,aclaracion,escalar,aclaracion-16
+C00987,"una pregunta, requisitos para pyme gracias",requisitos_credito,responder,requisitos_credito-16
+C00992,Oye hay un reror en mi estado de cuenta gracias,aclaracion,escalar,aclaracion-15
+C00993,"buen da, estoy enfermo y no puedo pagar gracias",reestructura,responder,reestructura-15
+C00994,disculpe estoy enfermo y no puedo pagar de favor,reestructura,responder,reestructura-15
+C00995,hola mi correo está mmal escrito,actualizar_datos,responder,actualizar_datos-06
+C01003,buenas tardes puedo pagar con mi tarjeta de débito desde el celular,medios_pago,responder,medios_pago-17
+C01008,me quedé sin trabajo y no puedo pagar,reestructura,responder,reestructura-02
+C01009,hace dos días pagué y nada,pago_no_reflejado,responder,pago_no_reflejado-13
+C01013,"una pregunta, quiero poner otro teléfono de contacto gracias",actualizar_datos,responder,actualizar_datos-07
+C01015,"UNA PREGUNTA, DE CUANTTO ES EL INTERES ANUAL",tasa_cat,responder,tasa_cat-09
+C01022,buenas tardes quiero poner una qja porfa,queja,escalar,queja-00
+C01032,me cobraron una penalización injusta porfa,aclaracion,escalar,aclaracion-16
+C01039,buena stardes carta de no adeudo por favor,estado_cuenta,responder,estado_cuenta-12
+C01044,cómo hago el pago en línea,medios_pago,responder,medios_pago-16
+C01049,cuándo me depositan el dinero del préstamo?,estatus_solicitud,responder,estatus_solicitud-14
+C01054,de cuánto es el interés anual,tasa_cat,responder,tasa_cat-09
+C01055,cómo pago desde la app,medios_pago,responder,medios_pago-04
+C01065,hay un error en mi estado de cuenta porfa,aclaracion,escalar,aclaracion-15
+C01076,"UNA PREGUNTA, QUIERO PONER UNA QJA",queja,escalar,queja-00
+C01077,"buen día, cómo obtengo un comprobante de pago",estado_cuenta,responder,estado_cuenta-06
+C01083,me cobraron una penalización injusta de favor,aclaracion,escalar,aclaracion-16
+C01086,como registro mi nuevo numero,actualizar_datos,responder,actualizar_datos-12
+C01087,"una pregunta, puedo pagar en oxxo",medios_pago,responder,medios_pago-01
+C01092,puedo sacar un cred si soy independiente,requisitos_credito,responder,requisitos_credito-03
+C01095,cuál es la sucursal más cercana,sucursales_horarios,responder,sucursales_horarios-03
+C01109,buenas tardes cuánto es mi deuda total?,consultar_saldo,responder,consultar_saldo-09
+C01110,buenas tardes cómo hago el pago en línea por favor,medios_pago,responder,medios_pago-16
+C01121,"una pergunta, cómo pago desde la app?",medios_pago,responder,medios_pago-04
+C01136,"una pregunta, donde estan ubicados?",sucursales_horarios,responder,sucursales_horarios-08
+C01140,"buen día, tengo respuesta de mi cred",estatus_solicitud,responder,estatus_solicitud-10
+C01141,quiero poner una queja de ffavor,queja,escalar,queja-00
+C01145,estado de cuenta del mes pasado,estado_cuenta,responder,estado_cuenta-15
+C01146,a que hora abren gracias,sucursales_horarios,responder,sucursales_horarios-01
+C01147,"buen dia, como hago el pago en linea xfa",medios_pago,responder,medios_pago-16
+C01153,tengo respuesta de mi crédito por favor,estatus_solicitud,responder,estatus_solicitud-10
+C01154,horario de sucursl entre semana,sucursales_horarios,responder,sucursales_horarios-15
+C01156,"buen día, qué necesio para pedir un crédito de favor",requisitos_credito,responder,requisitos_credito-00
+C01161,a qué horaa abren,sucursales_horarios,responder,sucursales_horarios-01
+C01166,cuál es el cat promedio gracias,tasa_cat,responder,tasa_cat-11
+C01170,me llaman a cada rato para cobrarme,queja,escalar,queja-03
+C01172,oye necesito ayuda para pagar?,reestructura,responder,reestructura-08
+C01180,quiero poner oro teléfono de contacto por favor,actualizar_datos,responder,actualizar_datos-07
+C01197,Oye hice una transferencia y no se refleja,pago_no_reflejado,responder,pago_no_reflejado-01
+C01198,Disculpe necesito ayuda para pagar por favor,reestructura,responder,reestructura-08
+C01200,"una pregunta, a que hora abren",sucursales_horarios,responder,sucursales_horarios-01
+C01202,oye me están cobrando algo que no es me urge,aclaracion,escalar,aclaracion-09
+C01203,Hola me cobraron una penalizacion injusta,aclaracion,escalar,aclaracion-16
+C01204,ME ESTÁN COBRANDO ALGO QUE NO S?,aclaracion,escalar,aclaracion-09
+C01207,"Buen dia, como actualizo mi correo porfa",actualizar_datos,responder,actualizar_datos-01
+C01212,buenas tardes horario de sucursal entre semaa?,sucursales_horarios,responder,sucursales_horarios-15
+C01214,oye me estan cobranod algo q no es,aclaracion,escalar,aclaracion-09
+C01222,oye me aplicaron un cargo indebido,aclaracion,escalar,aclaracion-10
+C01236,"buen día, me aplicaron un cargo indebido porfa",aclaracion,escalar,aclaracion-10
+C01241,disculpe estado de cuenta del mes pasado,estado_cuenta,responder,estado_cuenta-15
+C01245,Me aplicaron un cargo idnebido,aclaracion,escalar,aclaracion-10
+C01248,"una pregunta, ómo registro mi nuevo num",actualizar_datos,responder,actualizar_datos-12
+C01256,el trato fue grosero,queja,escalar,queja-12
+C01262,cuánto pago de intereses al final,tasa_cat,responder,tasa_cat-13
+C01265,me qde sin trabajo y no puedo pagar me urge,reestructura,responder,reestructura-02
+C01269,disculpe cuál es el cat promedio?,tasa_cat,responder,tasa_cat-11
+C01270,oye hace dos días pagué y nada m eurge,pago_no_reflejado,responder,pago_no_reflejado-13
+C01273,hoa cuánto interés cobran,tasa_cat,responder,tasa_cat-08
+C01286,hola puedo sacar un credito si soy independiente por favor,requisitos_credito,responder,requisitos_credito-03
+C01287,Buenas tardes cada cuando tego que pagar,fecha_pago,responder,fecha_pago-05
+C01291,cuándo me depositan el dinero del préstamo,estatus_solicitud,responder,estatus_solicitud-14
+C01293,quiero cambiar mi numero de telefono,actualizar_datos,responder,actualizar_datos-00
+C01301,cuál es la fecha límite dde mi mensualidad me urge,fecha_pago,responder,fecha_pago-03
+C01302,"buen día, cuál es la sucursal más cercana?",sucursales_horarios,responder,sucursales_horarios-03
+C01310,puedo pagar con mi tarjeta de débito desde el celular,medios_pago,responder,medios_pago-17
+C01320,"una pregunta, cuanto interes cobran me urge",tasa_cat,responder,tasa_cat-08
+C01323,La tasa es fija o variiable xfa,tasa_cat,responder,tasa_cat-04
+C01331,"Una pregunta, puedo pagar en oxxo porfa",medios_pago,responder,medios_pago-01
+C01333,Disculpe me quede sin trabajo y no puedo pagar,reestructura,responder,reestructura-02
+C01334,oye me llaman a cada rato para cobrarme,queja,escalar,queja-03
+C01337,cuál es el cat promedio,tasa_cat,responder,tasa_cat-11
+C01343,"buen día, están abiertos hoy de favor",sucursales_horarios,responder,sucursales_horarios-10
+C01349,disculpe cómo hago el pago en línea,medios_pago,responder,medios_pago-16
+C01354,me llaman a cada rato para cobrarme?,queja,escalar,queja-03
+C01360,horario de sucursal entre semana,sucursales_horarios,responder,sucursales_horarios-15
+C01362,"buen dia, a que hora abren me urge",sucursales_horarios,responder,sucursales_horarios-01
+C01364,"buen dia, hay un error en mi estado de cuenta me urge",aclaracion,escalar,aclaracion-15
+C01365,carta de no adeudo por favor,estado_cuenta,responder,estado_cuenta-12
+C01367,"Buen día, mi correo está mal escrito",actualizar_datos,responder,actualizar_datos-06
+C01371,"buen día, están abiertos hoy gracias",sucursales_horarios,responder,sucursales_horarios-10
+C01380,hola mi correo esta mal escrito por favor,actualizar_datos,responder,actualizar_datos-06
+C01392,disculpe cada cuando tengo q pagar de favor,fecha_pago,responder,fecha_pago-05
+C01393,hice una transferencia y no se refleja,pago_no_reflejado,responder,pago_no_reflejado-01

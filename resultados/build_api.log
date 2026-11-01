@@ -1,0 +1,207 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 2.31kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/cenzi-base:local-py3.13
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 119B done
+#3 DONE 0.0s
+
+#4 [entrenamiento  1/10] FROM docker.io/library/cenzi-base:local-py3.13@sha256:906d7fd88c36bf42a2a09c9642c96fdffd358f94d99191354f235ac161186af7
+#4 resolve docker.io/library/cenzi-base:local-py3.13@sha256:906d7fd88c36bf42a2a09c9642c96fdffd358f94d99191354f235ac161186af7 0.0s done
+#4 DONE 0.0s
+
+#5 [entrenamiento  2/10] WORKDIR /build
+#5 CACHED
+
+#6 [ejecucion 2/7] WORKDIR /app
+#6 CACHED
+
+#7 [internal] load build context
+#7 transferring context: 1.52kB done
+#7 DONE 0.0s
+
+#8 [entrenamiento  3/10] COPY requirements.txt requirements-dev.txt ./
+#8 DONE 0.0s
+
+#9 [entrenamiento  4/10] RUN python -m pip install --no-index --find-links http://127.0.0.1:8099/ --prefix=/install -r requirements.txt  && python -m pip install --no-index --find-links http://127.0.0.1:8099/ -r requirements-dev.txt
+#9 0.336 Looking in links: http://127.0.0.1:8099/
+#9 0.348 Collecting fastapi==0.162.0 (from -r requirements.txt (line 1))
+#9 0.351   Downloading fastapi-0.162.0-py3-none-any.whl (148 kB)
+#9 0.362 Collecting uvicorn==0.54.0 (from -r requirements.txt (line 2))
+#9 0.365   Downloading uvicorn-0.54.0-py3-none-any.whl (87 kB)
+#9 0.372 Collecting scikit-learn==1.9.1 (from -r requirements.txt (line 3))
+#9 0.375   Downloading scikit_learn-1.9.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (9.1 MB)
+#9 0.385      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.1/9.1 MB 1.3 GB/s  0:00:00
+#9 0.404 Collecting joblib==1.6.0 (from -r requirements.txt (line 4))
+#9 0.407   Downloading joblib-1.6.0-py3-none-any.whl (306 kB)
+#9 0.415 Collecting starlette>=0.46.0 (from fastapi==0.162.0->-r requirements.txt (line 1))
+#9 0.418   Downloading starlette-1.10.0-py3-none-any.whl (80 kB)
+#9 0.424 Collecting pydantic>=2.9.0 (from fastapi==0.162.0->-r requirements.txt (line 1))
+#9 0.427   Downloading pydantic-2.14.2-py3-none-any.whl (490 kB)
+#9 0.436 Collecting typing-extensions>=4.8.0 (from fastapi==0.162.0->-r requirements.txt (line 1))
+#9 0.439   Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#9 0.444 Collecting typing-inspection>=0.4.2 (from fastapi==0.162.0->-r requirements.txt (line 1))
+#9 0.446   Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+#9 0.451 Collecting annotated-doc>=0.0.2 (from fastapi==0.162.0->-r requirements.txt (line 1))
+#9 0.453   Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+#9 0.458 Collecting opentelemetry-api>=1.44.0 (from fastapi==0.162.0->-r requirements.txt (line 1))
+#9 0.460   Downloading opentelemetry_api-1.45.2-py3-none-any.whl (60 kB)
+#9 0.466 Collecting click>=7.0 (from uvicorn==0.54.0->-r requirements.txt (line 2))
+#9 0.468   Downloading click-8.5.0-py3-none-any.whl (125 kB)
+#9 0.473 Collecting h11>=0.8 (from uvicorn==0.54.0->-r requirements.txt (line 2))
+#9 0.475   Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+#9 0.481 Collecting numpy>=1.24.1 (from scikit-learn==1.9.1->-r requirements.txt (line 3))
+#9 0.483   Downloading numpy-2.5.4-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+#9 0.497      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 1.4 GB/s  0:00:00
+#9 0.525 Collecting scipy>=1.10.0 (from scikit-learn==1.9.1->-r requirements.txt (line 3))
+#9 0.528   Downloading scipy-1.18.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+#9 0.616      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 415.4 MB/s  0:00:00
+#9 0.666 Collecting narwhals>=2.0.1 (from scikit-learn==1.9.1->-r requirements.txt (line 3))
+#9 0.669   Downloading narwhals-2.28.0-py3-none-any.whl (490 kB)
+#9 0.678 Collecting threadpoolctl>=3.5.0 (from scikit-learn==1.9.1->-r requirements.txt (line 3))
+#9 0.681   Downloading threadpoolctl-3.7.0-py3-none-any.whl (26 kB)
+#9 0.688 Collecting cloudpickle>=3.0 (from joblib==1.6.0->-r requirements.txt (line 4))
+#9 0.691   Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+#9 0.699 Collecting annotated-types>=0.6.0 (from pydantic>=2.9.0->fastapi==0.162.0->-r requirements.txt (line 1))
+#9 0.701   Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+#9 0.708 Collecting pydantic-core==2.50.2 (from pydantic>=2.9.0->fastapi==0.162.0->-r requirements.txt (line 1))
+#9 0.711   Downloading pydantic_core-2.50.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.2 MB)
+#9 0.714      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 1.7 GB/s  0:00:00
+#9 0.725 Collecting anyio<5,>=4.0.0 (from starlette>=0.46.0->fastapi==0.162.0->-r requirements.txt (line 1))
+#9 0.728   Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+#9 0.734 Collecting idna>=2.8 (from anyio<5,>=4.0.0->starlette>=0.46.0->fastapi==0.162.0->-r requirements.txt (line 1))
+#9 0.736   Downloading idna-3.20-py3-none-any.whl (69 kB)
+#9 0.797 Installing collected packages: typing-extensions, threadpoolctl, numpy, narwhals, idna, h11, cloudpickle, click, annotated-types, annotated-doc, uvicorn, typing-inspection, scipy, pydantic-core, opentelemetry-api, joblib, anyio, starlette, scikit-learn, pydantic, fastapi
+#9 10.75 
+#9 10.75 Successfully installed annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.15.1 click-8.5.0 cloudpickle-3.1.2 fastapi-0.162.0 h11-0.16.0 idna-3.20 joblib-1.6.0 narwhals-2.28.0 numpy-2.5.4 opentelemetry-api-1.45.2 pydantic-2.14.2 pydantic-core-2.50.2 scikit-learn-1.9.1 scipy-1.18.1 starlette-1.10.0 threadpoolctl-3.7.0 typing-extensions-4.16.0 typing-inspection-0.4.4 uvicorn-0.54.0
+#9 11.18 Looking in links: http://127.0.0.1:8099/
+#9 11.19 Collecting fastapi==0.162.0 (from -r /build/requirements.txt (line 1))
+#9 11.20   Downloading fastapi-0.162.0-py3-none-any.whl (148 kB)
+#9 11.21 Collecting uvicorn==0.54.0 (from -r /build/requirements.txt (line 2))
+#9 11.22   Downloading uvicorn-0.54.0-py3-none-any.whl (87 kB)
+#9 11.23 Collecting scikit-learn==1.9.1 (from -r /build/requirements.txt (line 3))
+#9 11.23   Downloading scikit_learn-1.9.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (9.1 MB)
+#9 11.24      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.1/9.1 MB 1.7 GB/s  0:00:00
+#9 11.26 Collecting joblib==1.6.0 (from -r /build/requirements.txt (line 4))
+#9 11.26   Downloading joblib-1.6.0-py3-none-any.whl (306 kB)
+#9 11.27 Collecting pytest==9.1.1 (from -r requirements-dev.txt (line 2))
+#9 11.28   Downloading pytest-9.1.1-py3-none-any.whl (386 kB)
+#9 11.28 Collecting httpx2==2.13.1 (from -r requirements-dev.txt (line 3))
+#9 11.29   Downloading httpx2-2.13.1-py3-none-any.whl (95 kB)
+#9 11.30 Collecting starlette>=0.46.0 (from fastapi==0.162.0->-r /build/requirements.txt (line 1))
+#9 11.30   Downloading starlette-1.10.0-py3-none-any.whl (80 kB)
+#9 11.31 Collecting pydantic>=2.9.0 (from fastapi==0.162.0->-r /build/requirements.txt (line 1))
+#9 11.31   Downloading pydantic-2.14.2-py3-none-any.whl (490 kB)
+#9 11.32 Collecting typing-extensions>=4.8.0 (from fastapi==0.162.0->-r /build/requirements.txt (line 1))
+#9 11.32   Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#9 11.33 Collecting typing-inspection>=0.4.2 (from fastapi==0.162.0->-r /build/requirements.txt (line 1))
+#9 11.33   Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+#9 11.33 Collecting annotated-doc>=0.0.2 (from fastapi==0.162.0->-r /build/requirements.txt (line 1))
+#9 11.34   Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+#9 11.34 Collecting opentelemetry-api>=1.44.0 (from fastapi==0.162.0->-r /build/requirements.txt (line 1))
+#9 11.34   Downloading opentelemetry_api-1.45.2-py3-none-any.whl (60 kB)
+#9 11.35 Collecting click>=7.0 (from uvicorn==0.54.0->-r /build/requirements.txt (line 2))
+#9 11.36   Downloading click-8.5.0-py3-none-any.whl (125 kB)
+#9 11.36 Collecting h11>=0.8 (from uvicorn==0.54.0->-r /build/requirements.txt (line 2))
+#9 11.36   Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+#9 11.37 Collecting numpy>=1.24.1 (from scikit-learn==1.9.1->-r /build/requirements.txt (line 3))
+#9 11.37   Downloading numpy-2.5.4-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+#9 11.38      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 1.7 GB/s  0:00:00
+#9 11.41 Collecting scipy>=1.10.0 (from scikit-learn==1.9.1->-r /build/requirements.txt (line 3))
+#9 11.42   Downloading scipy-1.18.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+#9 11.48      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 587.4 MB/s  0:00:00
+#9 11.53 Collecting narwhals>=2.0.1 (from scikit-learn==1.9.1->-r /build/requirements.txt (line 3))
+#9 11.53   Downloading narwhals-2.28.0-py3-none-any.whl (490 kB)
+#9 11.54 Collecting threadpoolctl>=3.5.0 (from scikit-learn==1.9.1->-r /build/requirements.txt (line 3))
+#9 11.54   Downloading threadpoolctl-3.7.0-py3-none-any.whl (26 kB)
+#9 11.55 Collecting cloudpickle>=3.0 (from joblib==1.6.0->-r /build/requirements.txt (line 4))
+#9 11.55   Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+#9 11.56 Collecting iniconfig>=1.0.1 (from pytest==9.1.1->-r requirements-dev.txt (line 2))
+#9 11.56   Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+#9 11.57 Collecting packaging>=22 (from pytest==9.1.1->-r requirements-dev.txt (line 2))
+#9 11.57   Downloading packaging-26.3-py3-none-any.whl (129 kB)
+#9 11.58 Collecting pluggy<2,>=1.5 (from pytest==9.1.1->-r requirements-dev.txt (line 2))
+#9 11.58   Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
+#9 11.58 Collecting pygments>=2.7.2 (from pytest==9.1.1->-r requirements-dev.txt (line 2))
+#9 11.59   Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+#9 11.59      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 1.8 GB/s  0:00:00
+#9 11.60 Collecting anyio>=4.10 (from httpx2==2.13.1->-r requirements-dev.txt (line 3))
+#9 11.60   Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+#9 11.61 Collecting httpcore2==2.13.1 (from httpx2==2.13.1->-r requirements-dev.txt (line 3))
+#9 11.61   Downloading httpcore2-2.13.1-py3-none-any.whl (83 kB)
+#9 11.62 Collecting idna>=3.18 (from httpx2==2.13.1->-r requirements-dev.txt (line 3))
+#9 11.62   Downloading idna-3.20-py3-none-any.whl (69 kB)
+#9 11.63 Collecting truststore>=0.10 (from httpx2==2.13.1->-r requirements-dev.txt (line 3))
+#9 11.63   Downloading truststore-0.10.5-py3-none-any.whl (19 kB)
+#9 11.64 Collecting annotated-types>=0.6.0 (from pydantic>=2.9.0->fastapi==0.162.0->-r /build/requirements.txt (line 1))
+#9 11.64   Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+#9 11.65 Collecting pydantic-core==2.50.2 (from pydantic>=2.9.0->fastapi==0.162.0->-r /build/requirements.txt (line 1))
+#9 11.65   Downloading pydantic_core-2.50.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.2 MB)
+#9 11.65      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 1.2 GB/s  0:00:00
+#9 11.73 Installing collected packages: typing-extensions, truststore, threadpoolctl, pygments, pluggy, packaging, numpy, narwhals, iniconfig, idna, h11, cloudpickle, click, annotated-types, annotated-doc, uvicorn, typing-inspection, scipy, pytest, pydantic-core, opentelemetry-api, joblib, httpcore2, anyio, starlette, scikit-learn, pydantic, httpx2, fastapi
+#9 22.79 
+#9 22.79 Successfully installed annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.15.1 click-8.5.0 cloudpickle-3.1.2 fastapi-0.162.0 h11-0.16.0 httpcore2-2.13.1 httpx2-2.13.1 idna-3.20 iniconfig-2.3.1 joblib-1.6.0 narwhals-2.28.0 numpy-2.5.4 opentelemetry-api-1.45.2 packaging-26.3 pluggy-1.7.0 pydantic-2.14.2 pydantic-core-2.50.2 pygments-2.21.0 pytest-9.1.1 scikit-learn-1.9.1 scipy-1.18.1 starlette-1.10.0 threadpoolctl-3.7.0 truststore-0.10.5 typing-extensions-4.16.0 typing-inspection-0.4.4 uvicorn-0.54.0
+#9 DONE 23.8s
+
+#10 [entrenamiento  5/10] COPY scripts/ scripts/
+#10 DONE 0.1s
+
+#11 [entrenamiento  6/10] COPY data/respuestas_aprobadas_cenzi.csv data/
+#11 DONE 0.0s
+
+#12 [entrenamiento  7/10] RUN python scripts/generar_dataset.py && python scripts/entrenar.py
+#12 0.135 1404 consultas escritas en /build/data/consultas_cenzi.csv
+#12 2.324 Datos: 1404 | train 840 · val 282 · test 282
+#12 2.324 Umbral elegido en validación: 0.49
+#12 2.324 Prueba -> accuracy 0.823 | F1 macro 0.806 | cobertura 62.1% | acierto respondidas 95.4% | error total 2.8% | quejas/aclaraciones escaladas 87.0%
+#12 2.324 Modelo guardado en /build/models/cenzi_model.joblib
+#12 DONE 2.5s
+
+#13 [entrenamiento  8/10] COPY app/ app/
+#13 DONE 0.0s
+
+#14 [entrenamiento  9/10] COPY tests/ tests/
+#14 DONE 0.0s
+
+#15 [entrenamiento 10/10] RUN python -m pytest -q
+#15 0.504 Cannot read termcap database;
+#15 0.504 using dumb terminal settings.
+#15 1.755 ....................................................................     [100%]
+#15 2.197 68 passed in 1.43s
+#15 DONE 2.6s
+
+#16 [ejecucion 3/7] COPY --from=entrenamiento /install /usr/local
+#16 DONE 1.3s
+
+#17 [ejecucion 4/7] COPY --from=entrenamiento /build/models/ models/
+#17 DONE 0.1s
+
+#18 [ejecucion 5/7] COPY --from=entrenamiento /build/data/ data/
+#18 DONE 0.0s
+
+#19 [ejecucion 6/7] COPY app/ app/
+#19 DONE 0.0s
+
+#20 [ejecucion 7/7] RUN useradd --system --uid 10001 --no-create-home cenzi 2>/dev/null || echo "cenzi:x:10001:10001::/app:/sbin/nologin" >> /etc/passwd
+#20 DONE 0.1s
+
+#21 exporting to image
+#21 exporting layers
+#21 exporting layers 10.3s done
+#21 exporting manifest sha256:39b42ed4a7d151d4be2d310d346e0d2412656a9d241e23704b937cc6813919b2 done
+#21 exporting config sha256:dbe34566f64451d1b561232cf3abaa8662a295a0bac1d2d5956d93659a341bbd done
+#21 exporting attestation manifest sha256:f2e5a3a3e8195e241c896fba02bde061970ea5abf1b211f3884b423884b2082d done
+#21 exporting manifest list sha256:77d2087c3e8e4236e182bf6c2f4dc2f0e15d35d6bf28f8e6078dc30068e41246 done
+#21 naming to docker.io/library/cenzi-api:1.0.0 done
+#21 unpacking to docker.io/library/cenzi-api:1.0.0
+#21 unpacking to docker.io/library/cenzi-api:1.0.0 2.4s done
+#21 DONE 12.7s
+
+real	0m45.187s
+user	0m0.198s
+sys	0m0.108s

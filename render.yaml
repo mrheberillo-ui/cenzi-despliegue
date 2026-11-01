@@ -1,0 +1,38 @@
+# Blueprint de Render: despliega los dos contenedores como servicios web públicos.
+# Render → New → Blueprint → elegir este repositorio.
+# Durante la creación, Render pide el valor de BACKEND_URL (sync: false):
+#   escribe la URL pública de la API, por ejemplo https://cenzi-api.onrender.com
+services:
+  - type: web
+    name: cenzi-api
+    runtime: docker
+    plan: free
+    region: oregon
+    rootDir: backend
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /ready
+    autoDeploy: true
+    envVars:
+      - key: CENZI_ENV
+        value: render
+      - key: CENZI_LOG_LEVEL
+        value: INFO
+      - key: WEB_CONCURRENCY
+        value: "1"
+
+  - type: web
+    name: cenzi-web
+    runtime: docker
+    plan: free
+    region: oregon
+    rootDir: frontend
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /healthz
+    autoDeploy: true
+    envVars:
+      - key: BACKEND_URL
+        sync: false
+      - key: BACKEND_TIMEOUT_S
+        value: "60"

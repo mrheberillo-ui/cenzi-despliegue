@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cenzi · Asistente de consultas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="barra">
+    <div class="marca"><span class="logo" aria-hidden="true">C</span> Cenzi <small>Financiera Cenzontle</small></div>
+    <div id="estado" class="estado" title="Estado del backend"><span class="punto"></span><span id="estado-texto">Verificando…</span></div>
+  </header>
+
+  <main class="contenedor">
+    <section class="tarjeta">
+      <h1>¿En qué te ayudamos?</h1>
+      <p class="sub">Escribe tu consulta. Cenzi la clasifica y te da una respuesta aprobada o te comunica con una persona.</p>
+      <form id="formulario" autocomplete="off">
+        <label for="texto" class="oculto">Consulta</label>
+        <textarea id="texto" rows="3" maxlength="500" placeholder="Ej. ya pagué y no aparece mi pago" required></textarea>
+        <div class="fila">
+          <span id="contador" class="contador">0 / 500</span>
+          <button id="enviar" type="submit">Enviar consulta</button>
+        </div>
+      </form>
+      <div class="ejemplos" aria-label="Ejemplos">
+        <button type="button" class="chip">¿cuándo es mi fecha de pago?</button>
+        <button type="button" class="chip">dónde puedo pagar mi crédito</button>
+        <button type="button" class="chip">me cobraron de más</button>
+        <button type="button" class="chip">asdfgh</button>
+      </div>
+    </section>
+
+    <section id="resultado" class="tarjeta oculto" aria-live="polite">
+      <div class="cabecera-resultado">
+        <span id="accion" class="etiqueta"></span>
+        <span id="intencion" class="intencion"></span>
+      </div>
+      <p id="respuesta" class="respuesta"></p>
+      <div class="medidor"><div id="barra-confianza"></div><span id="marca-umbral" title="Umbral"></span></div>
+      <dl class="detalles">
+        <div><dt>Confianza</dt><dd id="confianza"></dd></div>
+        <div><dt>Umbral</dt><dd id="umbral"></dd></div>
+        <div><dt>Motivo</dt><dd id="motivo"></dd></div>
+        <div><dt>Latencia del modelo</dt><dd id="latencia"></dd></div>
+        <div><dt>ID de solicitud</dt><dd id="id-solicitud"></dd></div>
+        <div><dt>Versión del modelo</dt><dd id="version"></dd></div>
+      </dl>
+      <details><summary>Alternativas del modelo</summary><ol id="alternativas"></ol></details>
+    </section>
+
+    <section id="error" class="tarjeta error oculto" role="alert"></section>
+
+    <section class="tarjeta historial">
+      <h2>Historial de esta sesión</h2>
+      <table><thead><tr><th>Consulta</th><th>Intención</th><th>Confianza</th><th>Acción</th></tr></thead>
+        <tbody id="historial"></tbody></table>
+    </section>
+  </main>
+
+  <footer class="pie">Caso académico MSCA2102 · datos sintéticos · <a href="/api/docs" target="_blank" rel="noopener">documentación de la API</a></footer>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+[PASA] API /health
+[PASA] API /ready
+[PASA] Web /healthz alcanza la API
+[PASA] Web sirve la interfaz
+[PASA] Clasificar vía proxy
+[PASA] Queja se escala
+[PASA] Texto vacío -> 422
+Prueba de humo correcta.
