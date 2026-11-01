@@ -126,8 +126,11 @@ Errores: `422` con `{"error": "solicitud_invalida", "detalles": [{"campo", "mens
 | `pruebas/smoke_test.sh` | Contra el sistema levantado | 7 verificaciones rápidas de punta a punta | 7 / 7 |
 | `pruebas/validacion_sistema.py` | Contra el sistema levantado, vía frontend | Integración (10), modelo con datos no vistos (5), casos extremos (31), carga (3) | 47 / 49 |
 | `pruebas/pruebas_resiliencia.sh` | Contra el sistema levantado | Caída y recuperación, reinicio automático, modelo ausente, configuración, portabilidad, seguridad | 9 / 9 |
+| `pruebas/validacion_nube_navegador.js` | En el navegador, contra https://cenzi-web.onrender.com | Integración pública (7), modelo con datos no vistos (5), casos extremos (31) y carga | 40 / 43 |
 
-Las dos pruebas que no pasan se documentan en el reporte de validación: quejas y aclaraciones escaladas **87.0 %** (meta 95 %) y p95 de **347 ms** con 50 usuarios simultáneos por instancia (meta 300 ms).
+En la nube el modelo toma exactamente las mismas decisiones que en local; los casos E23 y E24 (inyección SQL y JNDI) reciben 403 porque el firewall de Cloudflare en el borde de Render los bloquea antes de llegar al contenedor.
+
+Las dos pruebas locales que no pasan se documentan en el reporte de validación: quejas y aclaraciones escaladas **87.0 %** (meta 95 %) y p95 de **347 ms** con 50 usuarios simultáneos por instancia (meta 300 ms).
 
 Modelo en el contenedor (282 consultas nunca vistas, partición por frase base): accuracy **0.823**, acierto en lo que responde **95.4 %**, cobertura **54.3 %**, respuestas equivocadas **2.5 %** del total.
 
@@ -178,7 +181,7 @@ Paso a paso, requisitos, alternativas (Azure Container Apps, Render) y operació
 │   ├── static/              index.html · app.js · styles.css
 │   ├── server.py            sirve la interfaz y hace de proxy hacia la API
 │   └── Dockerfile
-├── pruebas/                 smoke_test.sh · validacion_sistema.py · pruebas_resiliencia.sh
+├── pruebas/                 smoke_test.sh · validacion_sistema.py · pruebas_resiliencia.sh · validacion_nube_navegador.js
 ├── deploy/cloud-run/        desplegar.sh
 ├── docs/                    MANUAL_DESPLIEGUE.md · evidencias/ (capturas)
 ├── resultados/              bitácoras y resultados de la última validación
